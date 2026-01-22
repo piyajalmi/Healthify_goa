@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="admin.css" />
+  <link rel="icon" href="../images/logo.png" type="image/png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+  <header class="admin-header">
+  <div class="admin-header-left">
+    <img src="../images/logo.png" alt="HealthifyGoa Logo" class="admin-logo" />
+    <span class="admin-title">HealthifyGoa Admin</span>
+  </div>
+
+  <button class="logout-btn">Logout</button>
+</header>
+
+
+<div class="admin-container">
+
+  <div class="admin-card">
+    <h3>Add / Update Meal</h3>
+    <div class="admin-form">
+      <select id="docId">
+        <option value="veg">Veg Meal</option>
+        <option value="nonveg">Non-Veg Meal</option>
+        <option value="fitness">Fitness Meal</option>
+      </select>
+
+      <input id="price" type="number" placeholder="Price">
+
+      <label>
+        <input type="checkbox" id="available"> Available
+      </label>
+
+      <button onclick="saveMeal()">Save</button>
+    </div>
+  </div>
+
+  <div class="admin-card">
+    <h3>Manage Meal Items</h3>
+
+    <div class="admin-form">
+      <select id="itemCategory">
+        <option value="veg">Veg Meal</option>
+        <option value="nonveg">Non-Veg Meal</option>
+        <option value="fitness">Fitness Meal</option>
+      </select>
+
+      <input id="newItem" placeholder="Item name">
+      <button onclick="addItem()">Add Item</button>
+    </div>
+
+    <ul id="itemsList" class="items-list"></ul>
+  </div>
+
+  
+
+  <div class="admin-card">
+  <h3>Add Testimonial</h3>
+
+  <div class="admin-form grid-2">
+    <input id="tName" placeholder="Customer name" />
+    <input id="tLocation" placeholder="Location (Panaji)" />
+  </div>
+
+  <textarea id="tText" placeholder="Customer review"></textarea>
+
+  <div class="admin-form grid-3">
+    <select id="tMeal">
+      <option>Veg Meal</option>
+      <option>Non-Veg Meal</option>
+      <option>Fitness Meal</option>
+    </select>
+
+    <select id="tRating">
+      <option value="5">★★★★★ (5)</option>
+      <option value="4">★★★★☆ (4)</option>
+      <option value="3">★★★☆☆ (3)</option>
+    </select>
+
+    <button onclick="addTestimonial()">Add Testimonial</button>
+  </div>
+  <div class="admin-card">
+  <h3>Manage Testimonials</h3>
+  <div id="testimonialList" class="testimonial-admin-list"></div>
+</div>
+
+</div>
+
+  <script type="module" src="dashboard.js"></script>
+  <div id="toast" class="toast"></div>
+
+</body>
+</html>
